@@ -5,15 +5,15 @@
 # Data bases of the precharged example:
 
 #Enzime family DB:
-EXMPL_CENTRAL_DB = ("/home/luisyovanny/.evo/dev_Evo/data/data_bases/example/central/")   
+EXMPL_CENTRAL_DB = ("/home/luisyovanny/data/")   
 
 # Genome DB:
-EXMPL_GENOMES_DB = ("/home/luisyovanny/.evo/dev_Evo/data/data_bases/example/genomes/los17/")
+EXMPL_GENOMES_DB = ("/home/luisyovanny/data/GENOMES/")
 
 # Rast_ids file:
-EXMPL_RAST_IDS = ("/home/luisyovanny/.evo/dev_Evo/data/data_bases/example/genomes/los17Rast.ids")
+EXMPL_RAST_IDS = ("/home/luisyovanny/data/rast.ids")
 
-#Natural products DB(default =MIBiG):
+# Natural products DB(default =MIBiG):
 MIBiG_NAT_PRODS_DB = ("/home/luisyovanny/.evo/dev_Evo/data/data_bases/example/mibig/")
 
 ##Dictionary with all the paths:
@@ -27,7 +27,7 @@ EXMPL_DB = { "central" : EXMPL_CENTRAL_DB,
 ###################### in evomining format #########################
 
 
-EVO_GENOMES_DB = "/home/luisyovanny/.evo/dev_Evo/data/data_bases/evo_genomes_db/"
+EVO_GENOMES_DB = "/home/luisyovanny/data/GENOMES/"
 
 
 
@@ -40,17 +40,17 @@ EVO_GENOMES_DB = "/home/luisyovanny/.evo/dev_Evo/data/data_bases/evo_genomes_db/
 # This directory will contain the auxiliary files 
 # to obtain the genomes .faa files with the evomining format:
         
-GENOMES_EvoFmt = "/home/luisyovanny/.evo/dev_Evo/data/aux_data/genomes_EvoFmt/" 
+GENOMES_EvoFmt = "/home/luisyovanny/data/aux_data/genomes_EvoFmt/" 
 
 ## This directory will contain the auxiliary files
 # to obtain the central_enzimes.txt and ids_to_names_of_orgs.txt files.
 
-BBH_aux_files = "/home/luisyovanny/.evo/dev_Evo/data/aux_data/bbh_aux_files/"
+BBH_aux_files = "/home/luisyovanny/data/aux_data/bbh_aux_files/"
 
 
 
 
-EXPANDED_FAMS = "/home/luisyovanny/.evo/dev_Evo/data/data_bases/exp_fam/"
+EXPANDED_FAMS = "/home/luisyovanny/data/data_bases/exp_fam/"
 
 
 
@@ -70,11 +70,11 @@ BLASTp_CMD = "/home/luisyovanny/ncbi-blast-2.13.0+/bin/blastp"
 
 #################### blastdb's path #########################
 
-BLASTDBs_PATH = "/home/luisyovanny/.evo/dev_Evo/data/data_bases/blast_dbs/"
+BLASTDBs_PATH = "/home/luisyovanny/data/blast/"
 
 #################### blastp's path #########################
 
-BLASTp_PATH = "/home/luisyovanny/.evo/dev_Evo/data/data_bases/blastp/"
+BLASTp_PATH = "/home/luisyovanny/data/blastp/"
 
 
 

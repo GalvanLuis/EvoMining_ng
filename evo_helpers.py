@@ -226,16 +226,21 @@ def join_evo_headers_files():
     """
     files_list = [x for x in os.listdir(CTS.GENOMES_EvoFmt) if ".faa" in x]
     
-    
     new_files_list = []
     for file in files_list:
         old_name = CTS.GENOMES_EvoFmt + file 
         F = open(old_name, "r")
-        new_file = F.readline().split("|")[2] + ".faa"
+        line_parts = F.readline().split("|")
+        if len(line_parts) > 2:
+            new_file = line_parts[2] + ".faa"
+        else:
+            new_file = "default_name.faa"  # or handle the error as needed
         new_files_list.append(new_file)
         new_name = CTS.GENOMES_EvoFmt + new_file
         F.close()
         os.rename(old_name, new_name)
+        
+    print(new_files_list)
     
     ordered_files_list = sorted(new_files_list, key = lambda t : float(t.split(".faa")[0]))
     ## Path to the location of the evo_genomes_db:
@@ -289,7 +294,6 @@ def makeblast_db(path_input_db):
     """ This function obtains the blastdb of the db passed as 
     its argument.
     """
-    
     aux = [x for x in os.listdir(path_input_db) if ".fasta" in x]
     
     input_db = path_input_db + aux[0]
@@ -1093,7 +1097,7 @@ def obtain_bgcs():
     
     blast_files = [x for x in os.listdir(CTS.BLASTp_PATH + "exp_fam_to_nat_prods/") if x.endswith(".blast")]
     for blst_file in blast_files:
-        blast_path = "/home/luisyovanny/.evo/dev_Evo/data/data_bases/blastp/exp_fam_to_nat_prods/"
+        blast_path = "/home/csar/Proyectos/Posdoc/Proyecto_pos/dev_package/data/data_bases/blastp/exp_fam_to_nat_prods/"
 
         df = pd.read_csv(blast_path + blst_file,sep = '\t', names = CTS.BLAST_COLS, index_col = False)
         bgc_recruited = list(df[df["bitscore"]>100]["subject"].unique())
@@ -1242,5 +1246,4 @@ def tree_view():
         outTree = "View_" + CTS.MUSCLE_OUTPUT + t + ".txt"
         t.write(out_file = outTree,tree_style = ts)
     return 
-
 
